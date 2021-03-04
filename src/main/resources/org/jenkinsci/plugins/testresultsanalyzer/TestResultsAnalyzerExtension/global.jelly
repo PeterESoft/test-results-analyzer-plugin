@@ -37,6 +37,9 @@
 		<f:entry title="${%Runtime High Threshold}">
 			<f:textbox name="runTimeHighThreshold" value="${descriptor.getRunTimeHighThreshold()}" />
 		</f:entry>
+		<f:entry title="${%Maximum Number of TestCases that are allowed for analysis}">
+			<f:textbox name="maxNoOfTestCases" value="${descriptor.getMaxNoOfTestCases()}" />
+		</f:entry>
 		<f:optionalBlock field="useCustomStatusNames" title="${%Use Custom Names for Passed/Failed/Skipped/NA status}" checked="${descriptor.useCustomStatusNames}">
             <f:entry title="${%Passed}" field="passedRepresentation">
                 <f:textbox name="passedRepresentation" value="${descriptor.passedRepresentation}"/>

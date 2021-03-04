@@ -59,6 +59,7 @@ public class TestResultsAnalyzerExtension extends TransientActionFactory<Job> im
         private boolean hideConfigurationMethods = false;
         private String runTimeLowThreshold = "0.5";
         private String runTimeHighThreshold = "1.0";
+        private int maxNoOfTestCases = 200;
 
         private static final String passFailString = "passfail";
         private static final String runtimeString = "runtime";
@@ -100,6 +101,7 @@ public class TestResultsAnalyzerExtension extends TransientActionFactory<Job> im
                 showPieGraph = formData.getBoolean("showPieGraph");
                 runTimeLowThreshold = formData.getString("runTimeLowThreshold");
                 runTimeHighThreshold = formData.getString("runTimeHighThreshold");
+                maxNoOfTestCases = formData.getInt("maxNoOfTestCases");
                 chartDataType = formData.getString("chartDataType");
                 if (formData.containsKey("useCustomStatusNames")) {
                     JSONObject customData = formData.getJSONObject("useCustomStatusNames");
@@ -159,6 +161,8 @@ public class TestResultsAnalyzerExtension extends TransientActionFactory<Job> im
 		public String getRunTimeLowThreshold() { return runTimeLowThreshold; }
 
         public String getRunTimeHighThreshold() { return runTimeHighThreshold; }
+
+        public int getMaxNoOfTestCases() { return maxNoOfTestCases; }
 
         public String getChartDataType() { return chartDataType; }
 

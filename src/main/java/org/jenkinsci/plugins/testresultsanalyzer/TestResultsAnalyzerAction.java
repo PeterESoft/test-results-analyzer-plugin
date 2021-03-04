@@ -190,6 +190,9 @@ public class TestResultsAnalyzerAction extends Actionable implements Action {
 			return;
 		}
 
+		if(testAction.getTotalCount() > getMaxNoOfTestCases())
+			return;
+
 		try {
 			TabulatedResult testResult = (TabulatedResult) result;
 			Collection<? extends TestResult> packageResults = testResult.getChildren();
@@ -330,6 +333,9 @@ public class TestResultsAnalyzerAction extends Actionable implements Action {
 
 	public String getRunTimeHighThreshold() {
 		return TestResultsAnalyzerExtension.DESCRIPTOR.getRunTimeHighThreshold();
+	}
+	public int getMaxNoOfTestCases() {
+		return TestResultsAnalyzerExtension.DESCRIPTOR.getMaxNoOfTestCases();
 	}
 
 	public boolean isUseCustomStatusNames() {
